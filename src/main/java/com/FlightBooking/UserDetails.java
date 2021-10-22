@@ -1,22 +1,20 @@
 package com.FlightBooking;
 
-import java.util.ArrayList;
-
 public class UserDetails {
     private int id;
     private String phoneNumber;
     private String firstName;
     private String lastName;
     private String email;
-    private ArrayList<FlightDetails> bookedFlights = new ArrayList<>();
+    private passport = new PassportDetails();
 
-    public UserDetails(int id, String phoneNumber, String firstName, String lastName, String email, ArrayList<FlightDetails> bookedFlights) {
+
+    public UserDetails(int id, String phoneNumber, String firstName, String lastName, String email) {
         this.id = id;
         this.phoneNumber = phoneNumber;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.bookedFlights = bookedFlights;
     }
 
     public int getId() {
@@ -57,13 +55,5 @@ public class UserDetails {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public ArrayList<FlightDetails> getBookedFlights() {
-        return bookedFlights;
-    }
-
-    public void setBookedFlights(ArrayList<FlightDetails> bookedFlights) {
-        this.bookedFlights = bookedFlights;
     }
 }
