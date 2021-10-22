@@ -73,7 +73,14 @@ public class FlightDetails {
         return isAvailableToBook;
     }
 
-    public void setAvailableToBook(boolean availableToBook) {
-        isAvailableToBook = availableToBook;
+    @Override
+    public String toString() {
+        return ("Flight Number: " + flightNumber +
+                ", Date/Time of Departure: " + dateTime +
+                ", Departure Country: " + departureCountry + '\'' +
+                ", Destination Country: " + destinationCountry + '\'' +
+                ", Current Status: " + status + '\'' +
+                ", Maximum Passenger Capacity: " + maxCapacity +
+                ", isAvailableToBook: " + isAvailableToBook);
     }
 }
