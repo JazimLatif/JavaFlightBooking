@@ -1,12 +1,14 @@
 package com.FlightBooking;
 
+import java.util.Objects;
+
 public class UserDetails {
     private int id;
     private String phoneNumber;
     private String firstName;
     private String lastName;
     private String email;
-    PassportDetails passport = new PassportDetails("","");
+    PassportDetails passport = new PassportDetails("", "");
 
 
     public UserDetails(int id, String phoneNumber, String firstName, String lastName, String email) {
@@ -56,4 +58,33 @@ public class UserDetails {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return "UserDetails{" +
+                "id=" + id +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", passport=" + passport +
+                '}';
+    }
 }
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, phoneNumber, firstName, lastName, email, passport);
+//    }
+
+//    @Override
+//    public boolean equals(Object obj) {
+//        return super.equals(obj);
+//    }
+
+//    @Override
+//    public boolean equals(Object id) {
+//        if (this == id) return true;
+//        if (id == null || getClass() != id.getClass()) return false;
+//        Person person = (Person) o;
+//        return Objects.equals(name, person.name) && Objects.equals(email, person.email) && Objects.equals(phoneNumber, person.phoneNumber) && gender == person.gender;
+//};
