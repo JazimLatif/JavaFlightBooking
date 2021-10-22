@@ -6,7 +6,7 @@ public class UserDetails {
     private String firstName;
     private String lastName;
     private String email;
-    private passport = new PassportDetails();
+    PassportDetails passport = new PassportDetails("","");
 
 
     public UserDetails(int id, String phoneNumber, String firstName, String lastName, String email) {
