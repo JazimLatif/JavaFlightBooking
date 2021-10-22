@@ -1,5 +1,4 @@
 package com.FlightBooking;
 
-public class Main {
-
+public class ListOfFlights {
 }
