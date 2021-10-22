@@ -1,5 +1,7 @@
 package com.FlightBooking;
 
+import java.lang.reflect.Array;
+
 public class ListOfUsers {
     UserDetails[] users;
 
