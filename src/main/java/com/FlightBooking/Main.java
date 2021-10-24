@@ -15,6 +15,7 @@ public class Main {
         if (ListOfUsers.checkExistingUser(emailCheck)) {
         }
         else {
+            System.out.println("No account with those details could be found");
             ListOfUsers.addUser();
         }
         //  Next method to add is the 'menu' method with switch-case loop
