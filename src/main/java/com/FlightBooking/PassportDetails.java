@@ -25,4 +25,12 @@ public class PassportDetails {
     public void setNationality(String nationality) {
         this.nationality = nationality;
     }
+
+    @Override
+    public String toString() {
+        return "PassportDetails{" +
+                "passportNumber='" + passportNumber + '\'' +
+                ", nationality='" + nationality + '\'' +
+                '}';
+    }
 }
