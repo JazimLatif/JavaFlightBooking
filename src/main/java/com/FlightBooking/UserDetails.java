@@ -10,23 +10,26 @@ public class UserDetails {
     private String firstName;
     private String lastName;
     private String email;
-    private ArrayList<FlightDetails> bookedFlights = new ArrayList<>();
+    private PassportDetails userPassport;
+    private ArrayList<FlightDetails> bookedFlights;
     PassportDetails passport = new PassportDetails("", "");
 
-    public UserDetails(int id, String phoneNumber, String firstName, String lastName, String email) {
-        this.id = id;
-        this.phoneNumber = phoneNumber;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-    }
 
-    public UserDetails(int id, String phoneNumber, String firstName, String lastName, String email, ArrayList<FlightDetails> bookedFlights) {
+//    public UserDetails(int id, String phoneNumber, String firstName, String lastName, String email, ) {
+//        this.id = id;
+//        this.phoneNumber = phoneNumber;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.email = email;
+//    }
+
+    public UserDetails(int id, String phoneNumber, String firstName, String lastName, String email,PassportDetails userPassport, ArrayList<FlightDetails> bookedFlights) {
         this.id = id;
         this.phoneNumber = phoneNumber;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.userPassport = userPassport;
         this.bookedFlights = bookedFlights;
     }
 

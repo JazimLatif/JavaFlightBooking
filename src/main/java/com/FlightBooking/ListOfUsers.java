@@ -1,5 +1,7 @@
 package com.FlightBooking;
 
+import jdk.internal.icu.text.UnicodeSet;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +9,8 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class ListOfUsers {
-//    private static final ArrayList<UserDetails> users = new ArrayList<UserDetails>();
+    public UnicodeSet userFlights;
+    //    private static final ArrayList<UserDetails> users = new ArrayList<UserDetails>();
     private ArrayList<UserDetails> users = new ArrayList<>();
     private UserDetails newUser;
 
@@ -40,18 +43,22 @@ public class ListOfUsers {
     }
     public void addUser(UserDetails newUser) throws InterruptedException {
         users.add(newUser);
+
     }
 
     public void addUserBase() {
-        UserDetails user1 = new UserDetails(4531, "07756494858", "Steve", "Bruce", "Stevebruce@NFC.com");
-        UserDetails user2 = new UserDetails(5888, "07759689554", "Jon", "Jones", "JonJones@UFC.com");
-        UserDetails user3 = new UserDetails(8221, "07786730255", "Steph", "Curry", "ChefCurry@nba.com");
-        UserDetails user4 = new UserDetails(2274, "07912356722", "Steven", "Gerard", "StevieG@LFC.com");
-        UserDetails user5 = new UserDetails(1, "07889561507", "Kun", "Zhang", "kun@gmail.com");
-        UserDetails user6 = new UserDetails(2, "07834985578", "Yacine", "Hannane", "nino@gmail.com");
-        UserDetails user7 = new UserDetails(3, "07735783505", "Qun", "Zhang", "qun@gmail.com");
-        UserDetails jazim = new UserDetails(9999, "07922656207", "Jazim", "Latif", "Jazim@gmail.com");
-        UserDetails rashid = new UserDetails(1001, "07922688807", "Rashid", "F-Walcott", "Rashid@gmail.com");
+        PassportDetails userPassport = new PassportDetails("100","British");
+        ArrayList<FlightDetails> userFlights = new ArrayList<>();
+
+        UserDetails user1 = new UserDetails(4531, "07756494858", "Steve", "Bruce", "Stevebruce@NFC.com",userPassport,userFlights);
+        UserDetails user2 = new UserDetails(5888, "07759689554", "Jon", "Jones", "JonJones@UFC.com",userPassport,userFlights);
+        UserDetails user3 = new UserDetails(8221, "07786730255", "Steph", "Curry", "ChefCurry@nba.com",userPassport,userFlights) ;
+        UserDetails user4 = new UserDetails(2274, "07912356722", "Steven", "Gerard", "StevieG@LFC.com",userPassport,userFlights);
+        UserDetails user5 = new UserDetails(1001, "07889561507", "Kun", "Zhang", "kun@gmail.com",userPassport,userFlights);
+        UserDetails user6 = new UserDetails(2002, "07834985578", "Yacine", "Hannane", "nino@gmail.com",userPassport,userFlights);
+        UserDetails user7 = new UserDetails(3003, "07735783505", "Qun", "Zhang", "qun@gmail.com",userPassport,userFlights);
+        UserDetails jazim = new UserDetails(9999, "07922656207", "Jazim", "Latif", "Jazim@gmail.com",userPassport,userFlights);
+        UserDetails rashid = new UserDetails(1001, "07922688807", "Rashid", "F-Walcott", "Rashid@gmail.com",userPassport,userFlights);
 
 
         users.add(user1);
@@ -71,11 +78,11 @@ public class ListOfUsers {
 
         TimeUnit.SECONDS.sleep(1);
         System.out.println("Looks Like you are a new user, Welcome to the flight booking service");
-        TimeUnit.SECONDS.sleep(2);
+        TimeUnit.SECONDS.sleep(1);
 
         Scanner scannerEmail = new Scanner(System.in);
         System.out.println("New user, To create your account please enter the Email you want to register with");
-        String newUserEmail = scannerEmail.nextLine();                                             //small problem: Email check isnt done again on the sign up email
+        String newUserEmail = scannerEmail.nextLine();                                             //small problem: Email check isn't done again on the sign up email
         TimeUnit.SECONDS.sleep(1);
         System.out.println(newUserEmail + " your email has been added");
 
@@ -98,10 +105,10 @@ public class ListOfUsers {
 
             System.out.print("Thanks ");
             System.out.println(newUserFName + ", your new account has been created.");
-            TimeUnit.SECONDS.sleep(2);
+            TimeUnit.SECONDS.sleep(1);
 
 
-            UserDetails newestSignUp = new UserDetails(1111, newUserPhone, newUserFName, newUserLName, newUserEmail);
+            UserDetails newestSignUp = new UserDetails(1111, newUserPhone, newUserFName, newUserLName, newUserEmail, newUser.passport, newUser.getBookedFlights());
 
             boolean repeat2 = true;
             while (repeat2) {

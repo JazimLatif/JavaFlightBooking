@@ -2,15 +2,13 @@ package com.FlightBooking;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class ListOfFlights {
     //    array of FlightDetails objects
     private ArrayList<FlightDetails> flights = new ArrayList<FlightDetails>();
     private FlightDetails newFlight;
-
+    private ArrayList<UserDetails> users;
 
 
     public int getFlightId() {
@@ -27,6 +25,7 @@ public class ListOfFlights {
 
 
     }
+
 
     public ListOfFlights(ArrayList<FlightDetails> flights) {
         this.flights = flights;
@@ -50,6 +49,21 @@ public class ListOfFlights {
         flights.add(flight3);
         for (FlightDetails flight : flights) {
             System.out.println(flight.toString());
+        }
+    }
+
+    public void displayBookedFlights() {
+
+        FlightDetails flight1 = new FlightDetails(1, LocalDateTime.of(2021, 1, 1, 0, 0), "lHR", "PEK", "Scheduled", 100, true);
+        FlightDetails flight2 = new FlightDetails(2, LocalDateTime.of(2021, 1, 1, 0, 0), "STD", "Belgium", "Scheduled", 100, true);
+        FlightDetails flight3 = new FlightDetails(3, LocalDateTime.of(2021, 1, 1, 0, 0), "England", "South Korea", "Scheduled", 100, true);
+
+
+        flights.add(flight1);
+        flights.add(flight2);
+        flights.add(flight3);
+        for (FlightDetails flight : flights) {
+            System.out.println(users.bookedFlights.toString());
         }
     }
 
@@ -106,14 +120,14 @@ public class ListOfFlights {
             // Check user input (yes/no) and set flight status to cancelled
             while(true) {
                 areYouSure = scanner.next();
-                if (areYouSure.toLowerCase().equals("yes")) {
+                if (areYouSure.equalsIgnoreCase("yes")) {
                     flights.get(index).setStatus("Cancelled");
                     System.out.println(flights.get(index));
                     System.out.println("Flight number " + flightNumber + " has been cancelled.");
                     flights.remove(index);
                     loop=false;
                     break;
-                } else if (areYouSure.toLowerCase().equals("no")){
+                } else if (areYouSure.equalsIgnoreCase("no")){
                     System.out.println("Process cancelled. Going back to menu");
                     break;
                 }
@@ -125,4 +139,26 @@ public class ListOfFlights {
         }
 
     }
+
+    public void bookUserFlight() {
+        ListOfUsers users = new ListOfUsers();
+        displayAllFlights();
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("please select which flight you would like to book by typing the flight number");
+        int bookingNumber = scanner.nextInt();
+        for (FlightDetails flight : this.flights) {
+            System.out.println("check1");
+            if (bookingNumber == flight.getFlightNumber()) {
+                System.out.println("Flight booked");
+                users.userFlights.add(flight);
+                displayBookedFlights();
+                break;
+            }
+        }
+
+
+
+    }
+
 }

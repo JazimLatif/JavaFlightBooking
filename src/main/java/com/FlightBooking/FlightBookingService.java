@@ -7,17 +7,13 @@ import java.util.concurrent.TimeUnit;
 
 public class FlightBookingService {
     private UserDetails user;
-    private ListOfFlights flightList = new ListOfFlights();
+    private final ListOfFlights flightList = new ListOfFlights();
 
     public FlightBookingService() {
 
     }
 
 
-    public FlightBookingService(UserDetails user, ListOfFlights flightList) {
-        this.user = user;
-        this.flightList = flightList;
-    }
 
     public void displayAvailableFlights() throws InterruptedException {
         flightList.displayAllFlights();
@@ -25,12 +21,13 @@ public class FlightBookingService {
 
     }
 
-    public void displayBookedFlights() {
+    public void displayUsersFlights() {
+        flightList.displayBookedFlights();
 
     }
 
     public void bookFlight() throws InterruptedException {
-        user.getBookedFlights().toString();
+        flightList.bookUserFlight();
         backToTheMenu();
     }
 
@@ -80,7 +77,7 @@ public class FlightBookingService {
 
                 case "3":
                     System.out.println("Display your booked flights");
-
+                    displayUsersFlights();
                     break;
 
                 case "4":
