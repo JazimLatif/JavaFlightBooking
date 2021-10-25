@@ -2,6 +2,7 @@ package com.FlightBooking;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -9,6 +10,10 @@ public class ListOfUsers {
 //    private static final ArrayList<UserDetails> users = new ArrayList<UserDetails>();
     private ArrayList<UserDetails> users = new ArrayList<>();
     private UserDetails newUser;
+
+    public ListOfUsers() {
+
+    }
 
     public ListOfUsers(ArrayList<UserDetails> users) {
         this.users = users;
