@@ -105,9 +105,9 @@ public class ListOfUsers {
             System.out.println(newUserFName + ", your new account has been created.");
             TimeUnit.SECONDS.sleep(1);
 
-
-            UserDetails newestSignUp = new UserDetails(1111, newUserPhone, newUserFName, newUserLName, newUserEmail, newUser.passport, newUser.getBookedFlights());
-
+            PassportDetails newUserPassport = new PassportDetails("100","British");
+            ArrayList<FlightDetails> newUserFlights = new ArrayList<>();
+            UserDetails newestSignUp = new UserDetails(1111, newUserPhone, newUserFName, newUserLName, newUserEmail,newUserPassport,newUserFlights);
             boolean repeat2 = true;
             while (repeat2) {
 
@@ -125,11 +125,12 @@ public class ListOfUsers {
                 switch (detailsConfirm.toUpperCase()) {
                     case "Y":
                         users.add(newestSignUp);
-//                        TimeUnit.SECONDS.sleep(2);
+                        TimeUnit.SECONDS.sleep(1);
                         System.out.println("Account Creation Complete");
-                        TimeUnit.SECONDS.sleep(3);
+                        TimeUnit.SECONDS.sleep(1);
                         System.out.println("Welcome to FlightBooker");
-                        this.displayListOfUsers();
+                        //this.displayListOfUsers();
+                        System.out.println(users);
                         break;
 
                     case "N":
