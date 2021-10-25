@@ -6,6 +6,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class ListOfUsers {
+//    private static final ArrayList<UserDetails> users = new ArrayList<UserDetails>();
     private ArrayList<UserDetails> users = new ArrayList<>();
     private UserDetails newUser;
 
@@ -13,34 +14,28 @@ public class ListOfUsers {
         this.users = users;
     }
 
-    private static final ArrayList<UserDetails> users = new ArrayList<UserDetails>();
-
     //    int idCheck;
     String emailCheck;
 
-    public static boolean checkExistingUser(String emailCheck) {
+    public boolean checkExistingUser(String emailCheck) {
         boolean result = false;
-        for (int i = 0; i < users.size(); i++) {
-            if (emailCheck.compareToIgnoreCase(users.get(i).getEmail()) == 0) { //&& idCheck==(users.get(i).getId())){
+        for (UserDetails user : users) {
+            if (emailCheck.compareToIgnoreCase(user.getEmail()) == 0) { //&& idCheck==(users.get(i).getId())){
                 ;
                 result = true;
                 System.out.println("Welcome back to FlightBooker!");
                 break;
 
-            } else {
-                result = false;
-
-
             }
-
         }
         return result;
 
     }
-    public void addUser(UserDetails newUser){
+    public void addUser(UserDetails newUser) throws InterruptedException {
         users.add(newUser);
+    }
 
-    public static void addUserBase() {
+    public void addUserBase() {
         UserDetails user1 = new UserDetails(4531, "07756494858", "Steve", "Bruce", "Stevebruce@NFC.com");
         UserDetails user2 = new UserDetails(5888, "07759689554", "Jon", "Jones", "JonJones@UFC.com");
         UserDetails user3 = new UserDetails(8221, "07786730255", "Steph", "Curry", "ChefCurry@nba.com");
@@ -57,7 +52,7 @@ public class ListOfUsers {
 
     }
 
-    public static void addUser() throws InterruptedException {
+    public void addUser() throws InterruptedException {
 
 
         TimeUnit.SECONDS.sleep(1);
@@ -144,12 +139,6 @@ public class ListOfUsers {
 //            System.out.println("Welcome to FlightBooker");
 //            ListOfUsers.displayListOfUsers();
 //        } else { System.out.println("Tooo bad then, u had one job :o "); }
-
-
-
-
-
-
 
 
     public static void displayListOfUsers(){

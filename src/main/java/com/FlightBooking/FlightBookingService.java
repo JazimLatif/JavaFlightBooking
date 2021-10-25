@@ -1,7 +1,6 @@
 package com.FlightBooking;
 
 import java.util.ArrayList;
-
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -27,15 +26,8 @@ public class FlightBookingService {
     public void userCancelFlight() {
 
     }
-    public static void displayAllFlights(){
 
-        System.out.println("ALl flights are listed here:");
-
-    }
-
-
-
-    public static void FlightBookingMenu() throws InterruptedException {
+    public void FlightBookingMenu() throws InterruptedException {
 
         TimeUnit.SECONDS.sleep(2);
         System.out.println("MENU" );
@@ -85,10 +77,4 @@ public class FlightBookingService {
                       break;
         }}
     }
-
-
-
-
-
-
 }
