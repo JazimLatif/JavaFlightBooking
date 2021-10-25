@@ -1,26 +1,27 @@
 package com.FlightBooking;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class FlightBookingService {
     private UserDetails user;
     private ArrayList<FlightDetails> flights = new ArrayList<>();
-
+    private ListOfFlights flightList = new ListOfFlights();
     public FlightBookingService(){
 
     }
 
-    public FlightBookingService(UserDetails user, ArrayList<FlightDetails> flights) {
+
+    public FlightBookingService(UserDetails user, ArrayList<FlightDetails> flights, ListOfFlights flightList) {
         this.user = user;
         this.flights = flights;
+        this.flightList = flightList;
     }
 
-    public void displayAllFlights() {
-        for(FlightDetails flight: flights) {
-            flight.toString();
-        }
+    public void displayFlights() {
+    flightList.displayAllFlights();
     }
 
     public void bookFlight() {
@@ -28,23 +29,24 @@ public class FlightBookingService {
     }
 
     public void userCancelFlight() {
+        flightList.cancelFlight();
 
     }
 
     public void FlightBookingMenu() throws InterruptedException {
 
-        TimeUnit.SECONDS.sleep(2);
+//        TimeUnit.SECONDS.sleep(1);
         System.out.println("MENU" );
-        TimeUnit.SECONDS.sleep(1);
+//        TimeUnit.SECONDS.sleep(1);
         System.out.println(" - to navigate FlightBooker follow the instructions. Please wait until all 4 options have shown. - ");
-        TimeUnit.SECONDS.sleep(5);
-        TimeUnit.SECONDS.sleep(2);
+//        TimeUnit.SECONDS.sleep(2);
+
         System.out.println("To display all flights press : 1 ");
-        TimeUnit.SECONDS.sleep(2);
+//        TimeUnit.SECONDS.sleep(1);
         System.out.println("To display booked flights press : 2 ");
-        TimeUnit.SECONDS.sleep(2);
+//        TimeUnit.SECONDS.sleep(1);
         System.out.println("To book a flight press - 3 ");
-        TimeUnit.SECONDS.sleep(2);
+//        TimeUnit.SECONDS.sleep(1);
         System.out.println("To cancel your existing flight press - 4 ");
 
 
@@ -60,20 +62,26 @@ public class FlightBookingService {
 
         switch (menuInput){
             case "1":
-                displayAllFlights();
+                System.out.println("All fights:");
+                displayFlights();
                 break;
 
             case "2":
-                System.out.println("Booked Flights ");
+                System.out.println("Book A flight now");
+                bookFlight();
                 break;
 
             case "3":
-                System.out.println("Book A flight now ");
+                System.out.println("Display your booked flights");
+
                 break;
 
             case "4":
-                System.out.println("Cancel your flight  ");
+                System.out.println("Cancel your flight");
+                userCancelFlight();
                 break;
+
+
 
 
             default: System.out.println(" Please press one of the specified options. ");

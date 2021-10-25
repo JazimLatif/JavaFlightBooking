@@ -11,6 +11,8 @@ public class ListOfFlights {
     private ArrayList<FlightDetails> flights = new ArrayList<FlightDetails>();
     private FlightDetails newFlight;
 
+
+
     public int getFlightId() {
         return flightId;
     }
@@ -21,8 +23,20 @@ public class ListOfFlights {
 
     private int flightId;
 
-    public ListOfFlights() {}
+    public ListOfFlights() {
 
+    }
+    public void addFlightBase() {
+        FlightDetails flight1 = new FlightDetails(1, LocalDateTime.of(2021, 1, 1, 0, 0), "lHR", "PEK", "Scheduled", 100, true);
+        FlightDetails flight2 = new FlightDetails(2, LocalDateTime.of(2021, 1, 1, 0, 0), "STD", "Belgium", "Scheduled", 100, true);
+        FlightDetails flight3 = new FlightDetails(3, LocalDateTime.of(2021, 1, 1, 0, 0), "England", "South Korea", "Scheduled", 100, true);
+
+
+        flights.add(flight1);
+        flights.add(flight2);
+        flights.add(flight3);
+
+    }
     public ListOfFlights(ArrayList<FlightDetails> flights) {
         this.flights = flights;
     }
@@ -33,29 +47,30 @@ public class ListOfFlights {
 
     public void addFlight(FlightDetails newFlight) {
         flights.add(newFlight);
-        System.out.println("New flight added successfully.");
     }
 
+
     public void displayAllFlights() {
-        System.out.println("Getting all flights..");
         for (FlightDetails flight : flights) {
+            this.displayAllFlights();
             System.out.println(flight.toString());
         }
     }
 
     public void cancelFlight() {
+
         Scanner scanner = new Scanner(System.in);
         boolean flightIsMatch = false;
         String areYouSure;
         int flightNumber;
         int index = 0;
-
-        while(true) {
+        boolean loop=true;
+        while(loop) {
             System.out.println("Enter flight number for the flight you would like to cancel: ");
-
+            System.out.println(this.flights);
             // Check if flight is a valid integer
             if (!scanner.hasNextInt()) {
-                System.out.println("Flight number is not recognised. Please try again. ");
+                System.out.println("That wasn't a number, Please try again. ");
                 scanner.nextLine();
                 continue;
             }
@@ -64,6 +79,7 @@ public class ListOfFlights {
 
             // check flight number matches database
             for (FlightDetails flight : this.flights) {
+                System.out.println("check1");
                 if (flightNumber == flight.getFlightNumber()) {
                     flightIsMatch = true;
                     System.out.println("Flight found.");
@@ -90,6 +106,8 @@ public class ListOfFlights {
                     flights.get(index).setStatus("Cancelled");
                     System.out.println(flights.get(index));
                     System.out.println("Flight number " + flightNumber + " has been cancelled.");
+                    flights.remove(index);
+                    loop=false;
                     break;
                 } else if (areYouSure.toLowerCase().equals("no")){
                     System.out.println("Process cancelled. Going back to menu");
@@ -98,6 +116,7 @@ public class ListOfFlights {
                 else {
                     System.out.println("Please enter [yes/no].");
                 }
+
             }
         }
 

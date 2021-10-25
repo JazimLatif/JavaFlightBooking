@@ -11,9 +11,6 @@ public class ListOfUsers {
     private ArrayList<UserDetails> users = new ArrayList<>();
     private UserDetails newUser;
 
-    public ListOfUsers() {
-
-    }
 
     public ListOfUsers(ArrayList<UserDetails> users) {
         this.users = users;
@@ -25,6 +22,7 @@ public class ListOfUsers {
 
     //    int idCheck;
     String emailCheck;
+
 
     public boolean checkExistingUser(String emailCheck) {
         boolean result = false;
@@ -49,13 +47,20 @@ public class ListOfUsers {
         UserDetails user2 = new UserDetails(5888, "07759689554", "Jon", "Jones", "JonJones@UFC.com");
         UserDetails user3 = new UserDetails(8221, "07786730255", "Steph", "Curry", "ChefCurry@nba.com");
         UserDetails user4 = new UserDetails(2274, "07912356722", "Steven", "Gerard", "StevieG@LFC.com");
+        UserDetails user5 = new UserDetails(1, "07889561507", "Kun", "Zhang", "kun@gmail.com");
+        UserDetails user6 = new UserDetails(2, "07834985578", "Yacine", "Hannane", "nino@gmail.com");
+        UserDetails user7 = new UserDetails(3, "07735783505", "Qun", "Zhang", "qun@gmail.com");
         UserDetails jazim = new UserDetails(9999, "07922656207", "Jazim", "Latif", "Jazim@gmail.com");
         UserDetails rashid = new UserDetails(1001, "07922688807", "Rashid", "F-Walcott", "Rashid@gmail.com");
+
 
         users.add(user1);
         users.add(user2);
         users.add(user3);
         users.add(user4);
+        users.add(user5);
+        users.add(user6);
+        users.add(user7);
         users.add(jazim);
         users.add(rashid);
 
