@@ -7,11 +7,11 @@ public class Main {
     public static void main(String[] args) throws InterruptedException{
         ArrayList<FlightDetails> flights = new ArrayList<>();
         ArrayList<UserDetails> users = new ArrayList<>();
-        FlightBookingService flightBookingService = new FlightBookingService;
-        ListOfUsers listOfUsers = new ListOfUsers;
+        FlightBookingService flightBookingService = new FlightBookingService();
+        ListOfUsers listOfUsers = new ListOfUsers();
 
         listOfUsers.addUserBase();
-        ListOfUsers.displayListOfUsers();
+        listOfUsers.displayListOfUsers();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to FlightBooker, please enter your email to log in");
         String emailCheck = scanner.nextLine();

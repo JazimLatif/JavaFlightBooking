@@ -8,6 +8,10 @@ public class FlightBookingService {
     private UserDetails user;
     private ArrayList<FlightDetails> flights = new ArrayList<>();
 
+    public FlightBookingService(){
+
+    }
+
     public FlightBookingService(UserDetails user, ArrayList<FlightDetails> flights) {
         this.user = user;
         this.flights = flights;
