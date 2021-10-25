@@ -24,9 +24,6 @@ public class ListOfFlights {
     private int flightId;
 
     public ListOfFlights() {
-
-    }
-    public void addFlightBase() {
         FlightDetails flight1 = new FlightDetails(1, LocalDateTime.of(2021, 1, 1, 0, 0), "lHR", "PEK", "Scheduled", 100, true);
         FlightDetails flight2 = new FlightDetails(2, LocalDateTime.of(2021, 1, 1, 0, 0), "STD", "Belgium", "Scheduled", 100, true);
         FlightDetails flight3 = new FlightDetails(3, LocalDateTime.of(2021, 1, 1, 0, 0), "England", "South Korea", "Scheduled", 100, true);
@@ -37,6 +34,7 @@ public class ListOfFlights {
         flights.add(flight3);
 
     }
+
     public ListOfFlights(ArrayList<FlightDetails> flights) {
         this.flights = flights;
     }
@@ -45,15 +43,13 @@ public class ListOfFlights {
         this.flights = flights;
     }
 
-    public void addFlight(FlightDetails newFlight) {
-        flights.add(newFlight);
-    }
+
 
 
     public void displayAllFlights() {
         for (FlightDetails flight : flights) {
             this.displayAllFlights();
-            System.out.println(flight.toString());
+            System.out.println(flights.toString());
         }
     }
 

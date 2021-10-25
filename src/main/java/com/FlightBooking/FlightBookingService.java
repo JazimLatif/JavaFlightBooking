@@ -7,21 +7,23 @@ import java.util.concurrent.TimeUnit;
 
 public class FlightBookingService {
     private UserDetails user;
-    private ArrayList<FlightDetails> flights = new ArrayList<>();
-    private ListOfFlights flightList = new ListOfFlights();
+    private ListOfFlights flightList;
     public FlightBookingService(){
 
     }
 
 
-    public FlightBookingService(UserDetails user, ArrayList<FlightDetails> flights, ListOfFlights flightList) {
+    public FlightBookingService(UserDetails user, ListOfFlights flightList) {
         this.user = user;
-        this.flights = flights;
         this.flightList = flightList;
     }
 
-    public void displayFlights() {
-    flightList.displayAllFlights();
+    public void displayAvailableFlights() {
+        flightList.displayAllFlights();
+
+    }
+    public void displayBookedFlights() {
+
     }
 
     public void bookFlight() {
@@ -62,8 +64,8 @@ public class FlightBookingService {
 
         switch (menuInput){
             case "1":
-                System.out.println("All fights:");
-                displayFlights();
+                System.out.println("All Available fights:");
+                displayAvailableFlights();
                 break;
 
             case "2":
