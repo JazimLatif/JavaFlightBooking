@@ -49,7 +49,7 @@ public class ListOfFlights {
         flights.add(flight2);
         flights.add(flight3);
         for (FlightDetails flight : flights) {
-            System.out.println(flights.toString());
+            System.out.println(flight.toString());
         }
     }
 
