@@ -1,16 +1,29 @@
 package com.FlightBooking;
 
-import java.lang.reflect.Array;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         ArrayList<FlightDetails> flights = new ArrayList<>();
 
         ArrayList<UserDetails> users = new ArrayList<>();
+    public static void main(String[] args) throws InterruptedException {
+        ListOfUsers.addUserBase();
+        ListOfUsers.displayListOfUsers();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to FlightBooker, please enter your email to log in");
+        String emailCheck = scanner.nextLine();
+//        System.out.println("Please enter the unique user ID for the account belonging to " +emailCheck);
+//        int idCheck = scanner.nextInt();
+        if (ListOfUsers.checkExistingUser(emailCheck)) {
+        }
+        else {
+            System.out.println("No account with those details could be found");
+            ListOfUsers.addUser();
+        }
+        //  Next method to add is the 'menu' method with switch-case loop
+        FlightBookingService.FlightBookingMenu();
+
+
+
 
         ArrayList<FlightDetails> user1Flights = new ArrayList<>();
         ArrayList<FlightDetails> user2Flights = new ArrayList<>();
@@ -41,4 +54,7 @@ public class Main {
 //        flightList.cancelFlight();
 
     }
+    }
 }
+
+
