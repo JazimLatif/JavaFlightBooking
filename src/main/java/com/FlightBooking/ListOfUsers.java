@@ -1,15 +1,21 @@
 package com.FlightBooking;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class ListOfUsers {
-    UserDetails[] users;
+    private ArrayList<UserDetails> users = new ArrayList<>();
+    private UserDetails newUser;
+
+    public ListOfUsers(ArrayList<UserDetails> users) {
+        this.users = users;
+    }
 
     public static void checkExistingUser(){
 
     }
-    public static void addUser(){
-
+    public void addUser(UserDetails newUser){
+        users.add(newUser);
     }
 
     public static void displayListOfUsers(){

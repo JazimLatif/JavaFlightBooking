@@ -10,12 +10,13 @@ public class UserDetails {
     private String email;
     private ArrayList<FlightDetails> bookedFlights = new ArrayList<>();
 
-    public UserDetails(int id, String phoneNumber, String firstName, String lastName, String email) {
+    public UserDetails(int id, String phoneNumber, String firstName, String lastName, String email, ArrayList<FlightDetails> bookedFlights) {
         this.id = id;
         this.phoneNumber = phoneNumber;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.bookedFlights = bookedFlights;
     }
 
     public int getId() {
