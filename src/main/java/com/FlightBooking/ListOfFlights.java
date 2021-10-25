@@ -24,14 +24,7 @@ public class ListOfFlights {
     private int flightId;
 
     public ListOfFlights() {
-        FlightDetails flight1 = new FlightDetails(1, LocalDateTime.of(2021, 1, 1, 0, 0), "lHR", "PEK", "Scheduled", 100, true);
-        FlightDetails flight2 = new FlightDetails(2, LocalDateTime.of(2021, 1, 1, 0, 0), "STD", "Belgium", "Scheduled", 100, true);
-        FlightDetails flight3 = new FlightDetails(3, LocalDateTime.of(2021, 1, 1, 0, 0), "England", "South Korea", "Scheduled", 100, true);
 
-
-        flights.add(flight1);
-        flights.add(flight2);
-        flights.add(flight3);
 
     }
 
@@ -47,13 +40,28 @@ public class ListOfFlights {
 
 
     public void displayAllFlights() {
+        FlightDetails flight1 = new FlightDetails(1, LocalDateTime.of(2021, 1, 1, 0, 0), "lHR", "PEK", "Scheduled", 100, true);
+        FlightDetails flight2 = new FlightDetails(2, LocalDateTime.of(2021, 1, 1, 0, 0), "STD", "Belgium", "Scheduled", 100, true);
+        FlightDetails flight3 = new FlightDetails(3, LocalDateTime.of(2021, 1, 1, 0, 0), "England", "South Korea", "Scheduled", 100, true);
+
+
+        flights.add(flight1);
+        flights.add(flight2);
+        flights.add(flight3);
         for (FlightDetails flight : flights) {
-            this.displayAllFlights();
             System.out.println(flights.toString());
         }
     }
 
     public void cancelFlight() {
+        FlightDetails flight1 = new FlightDetails(1, LocalDateTime.of(2021, 1, 1, 0, 0), "lHR", "PEK", "Scheduled", 100, true);
+        FlightDetails flight2 = new FlightDetails(2, LocalDateTime.of(2021, 1, 1, 0, 0), "STD", "Belgium", "Scheduled", 100, true);
+        FlightDetails flight3 = new FlightDetails(3, LocalDateTime.of(2021, 1, 1, 0, 0), "England", "South Korea", "Scheduled", 100, true);
+
+
+        flights.add(flight1);
+        flights.add(flight2);
+        flights.add(flight3);
 
         Scanner scanner = new Scanner(System.in);
         boolean flightIsMatch = false;

@@ -14,6 +14,7 @@ public class Main {
 
         listOfUsers.addUserBase();
 
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to FlightBooker, please enter your email to log in");
         String emailCheck = scanner.nextLine();

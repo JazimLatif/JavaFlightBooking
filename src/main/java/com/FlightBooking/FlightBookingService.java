@@ -7,13 +7,13 @@ import java.util.concurrent.TimeUnit;
 
 public class FlightBookingService {
     private UserDetails user;
-    private ListOfFlights flightList;
+    private ListOfFlights flightList = new ListOfFlights();
     public FlightBookingService(){
 
     }
 
 
-    public FlightBookingService(UserDetails user, ListOfFlights flightList) {
+    public FlightBookingService(UserDetails user,  ListOfFlights flightList) {
         this.user = user;
         this.flightList = flightList;
     }
