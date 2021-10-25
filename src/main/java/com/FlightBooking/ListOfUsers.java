@@ -19,6 +19,10 @@ public class ListOfUsers {
         this.users = users;
     }
 
+    public ListOfUsers(){
+
+    };
+
     //    int idCheck;
     String emailCheck;
 
@@ -115,7 +119,7 @@ public class ListOfUsers {
                         System.out.println("Account Creation Complete");
                         TimeUnit.SECONDS.sleep(3);
                         System.out.println("Welcome to FlightBooker");
-                        ListOfUsers.displayListOfUsers();
+                        this.displayListOfUsers();
                         break;
 
                     case "N":
@@ -146,7 +150,7 @@ public class ListOfUsers {
 //        } else { System.out.println("Tooo bad then, u had one job :o "); }
 
 
-    public static void displayListOfUsers(){
+    public void displayListOfUsers(){
         System.out.println(users);
 
     }

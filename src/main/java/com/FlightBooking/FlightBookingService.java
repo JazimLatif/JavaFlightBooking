@@ -8,7 +8,7 @@ public class FlightBookingService {
     private UserDetails user;
     private ArrayList<FlightDetails> flights = new ArrayList<>();
 
-    public FlightBookingService() {
+    public FlightBookingService(){
 
     }
 
