@@ -22,6 +22,15 @@ public class ListOfFlights {
     private int flightId;
 
     public ListOfFlights() {
+        FlightDetails flight1 = new FlightDetails(1, LocalDateTime.of(2021, 1, 1, 0, 0), "lHR", "PEK", "Scheduled", 100, true);
+        FlightDetails flight2 = new FlightDetails(2, LocalDateTime.of(2021, 1, 1, 0, 0), "STD", "Belgium", "Scheduled", 100, true);
+        FlightDetails flight3 = new FlightDetails(3, LocalDateTime.of(2021, 1, 1, 0, 0), "England", "South Korea", "Scheduled", 100, true);
+
+
+        flights.add(flight1);
+        flights.add(flight2);
+        flights.add(flight3);
+
 
 
     }
@@ -39,43 +48,15 @@ public class ListOfFlights {
 
 
     public void displayAllFlights() {
-        FlightDetails flight1 = new FlightDetails(1, LocalDateTime.of(2021, 1, 1, 0, 0), "lHR", "PEK", "Scheduled", 100, true);
-        FlightDetails flight2 = new FlightDetails(2, LocalDateTime.of(2021, 1, 1, 0, 0), "STD", "Belgium", "Scheduled", 100, true);
-        FlightDetails flight3 = new FlightDetails(3, LocalDateTime.of(2021, 1, 1, 0, 0), "England", "South Korea", "Scheduled", 100, true);
-
-
-        flights.add(flight1);
-        flights.add(flight2);
-        flights.add(flight3);
         for (FlightDetails flight : flights) {
             System.out.println(flight.toString());
         }
     }
 
-    public void displayBookedFlights() {
 
-        FlightDetails flight1 = new FlightDetails(1, LocalDateTime.of(2021, 1, 1, 0, 0), "lHR", "PEK", "Scheduled", 100, true);
-        FlightDetails flight2 = new FlightDetails(2, LocalDateTime.of(2021, 1, 1, 0, 0), "STD", "Belgium", "Scheduled", 100, true);
-        FlightDetails flight3 = new FlightDetails(3, LocalDateTime.of(2021, 1, 1, 0, 0), "England", "South Korea", "Scheduled", 100, true);
-
-
-        flights.add(flight1);
-        flights.add(flight2);
-        flights.add(flight3);
-        for (FlightDetails flight : flights) {
-            System.out.println(users.bookedFlights.toString());
-        }
-    }
 
     public void cancelFlight() {
-        FlightDetails flight1 = new FlightDetails(1, LocalDateTime.of(2021, 1, 1, 0, 0), "lHR", "PEK", "Scheduled", 100, true);
-        FlightDetails flight2 = new FlightDetails(2, LocalDateTime.of(2021, 1, 1, 0, 0), "STD", "Belgium", "Scheduled", 100, true);
-        FlightDetails flight3 = new FlightDetails(3, LocalDateTime.of(2021, 1, 1, 0, 0), "England", "South Korea", "Scheduled", 100, true);
 
-
-        flights.add(flight1);
-        flights.add(flight2);
-        flights.add(flight3);
 
         Scanner scanner = new Scanner(System.in);
         boolean flightIsMatch = false;
@@ -125,6 +106,7 @@ public class ListOfFlights {
                     System.out.println(flights.get(index));
                     System.out.println("Flight number " + flightNumber + " has been cancelled.");
                     flights.remove(index);
+                    System.out.println(flights);
                     loop=false;
                     break;
                 } else if (areYouSure.equalsIgnoreCase("no")){
@@ -140,25 +122,25 @@ public class ListOfFlights {
 
     }
 
-    public void bookUserFlight() {
-        ListOfUsers users = new ListOfUsers();
-        displayAllFlights();
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("please select which flight you would like to book by typing the flight number");
-        int bookingNumber = scanner.nextInt();
-        for (FlightDetails flight : this.flights) {
-            System.out.println("check1");
-            if (bookingNumber == flight.getFlightNumber()) {
-                System.out.println("Flight booked");
-                users.userFlights.add(flight);
-                displayBookedFlights();
-                break;
-            }
-        }
-
-
-
-    }
+//    public void bookUserFlight() {
+//        ListOfUsers users = new ListOfUsers();
+//        displayAllFlights();
+//
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("please select which flight you would like to book by typing the flight number");
+//        int bookingNumber = scanner.nextInt();
+//        for (FlightDetails flight : this.flights) {
+//            System.out.println("check1");
+//            if (bookingNumber == flight.getFlightNumber()) {
+//                System.out.println("Flight booked");
+//                users.userFlights.add(flight);
+//                displayBookedFlights();
+//                break;
+//            }
+//        }
+//
+//
+//
+//    }
 
 }

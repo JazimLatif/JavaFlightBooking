@@ -1,6 +1,6 @@
 package com.FlightBooking;
 
-import jdk.internal.icu.text.UnicodeSet;
+
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -9,8 +9,6 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class ListOfUsers {
-    public UnicodeSet userFlights;
-    //    private static final ArrayList<UserDetails> users = new ArrayList<UserDetails>();
     private ArrayList<UserDetails> users = new ArrayList<>();
     private UserDetails newUser;
 

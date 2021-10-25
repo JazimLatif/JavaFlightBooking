@@ -22,12 +22,11 @@ public class FlightBookingService {
     }
 
     public void displayUsersFlights() {
-        flightList.displayBookedFlights();
+
 
     }
 
     public void bookFlight() throws InterruptedException {
-        flightList.bookUserFlight();
         backToTheMenu();
     }
 
